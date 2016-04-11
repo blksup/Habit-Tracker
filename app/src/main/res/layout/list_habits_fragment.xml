@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff">
+
+    <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/adView">
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:paddingTop="42dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        <LinearLayout
+                android:id="@+id/llEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/tvStarEmpty"
+                    style="@style/habitsListEmptyStyle"
+                    android:text="@string/fa_star_half_o"
+                    android:textSize="80sp"/>
+
+            <TextView
+                    style="@style/habitsListEmptyStyle"
+                    android:text="@string/no_habits_found"/>
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/habitsListHeaderStyle">
+
+            <TextView
+                    android:id="@+id/tvStarHeader"
+                    style="@style/habitsListStarStyle"/>
+
+            <TextView
+                    android:id="@+id/tvNameHeader"
+                    style="@style/habitsListNameStyle"
+                    android:text=""/>
+
+            <LinearLayout
+                    android:id="@+id/llButtonsHeader"
+                    style="@style/habitsListButtonsPanelStyle"/>
+        </LinearLayout>
+
+        <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_marginTop="37dp"
+                />
+
+        <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                app:backgroundTint="#9a428b"
+                android:layout_gravity="bottom|end"
+                app:elevation="6dp"
+                app:pressedTranslationZ="12dp"
+                android:src="@drawable/fab_add"
+                app:layout_anchor="@+id/recyclerView"
+                app:layout_anchorGravity="bottom|end"
+                app:layout_behavior="com.blk.uhabits.views.FABScrollBehavior"/>
+    </android.support.design.widget.CoordinatorLayout>
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center|bottom"
+        android:layout_below="@+id/llHint"
+        app:adSize="SMART_BANNER"
+        app:adUnitId="ca-app-pub-1947924918537729/3305236693">
+    </com.google.android.gms.ads.AdView>
+    <LinearLayout
+            android:id="@+id/llHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/indigo_500"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom|end"
+            android:orientation="vertical"
+            android:animateLayoutChanges="true"
+            android:visibility="gone"
+            style="@style/cardStyle">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hint_title"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_weight="5"/>
+
+        <TextView
+                android:id="@+id/hintContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_weight="5"/>
+
+    </LinearLayout>
+</RelativeLayout>

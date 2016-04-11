@@ -1,0 +1,18 @@
+<resources>
+    <style name="MyDialogStyle" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:spinnerItemStyle">@style/dialogFormText</item>
+        <item name="android:spinnerDropDownItemStyle">@style/dialogFormSpinnerDropDown</item>
+    </style>
+
+    <style name="cardStyle" parent="cardBasicStyle">
+        <item name="android:background">@color/white</item>
+        <item name="android:elevation">1dp</item>
+    </style>
+
+    <style name="aboutClickableItemStyle" parent="aboutItemStyle">
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:background">@drawable/ripple_transparent</item>
+    </style>
+
+</resources>

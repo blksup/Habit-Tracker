@@ -1,0 +1,130 @@
+<resources>
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#3F51B5</item>
+        <item name="colorPrimaryDark">#283593</item>
+        <item name="colorAccent">#303F9F</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowActionBarOverlay">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:spinnerItemStyle">@style/dialogFormText</item>
+        <item name="android:windowBackground">@color/background_material_light</item>
+        <item name="android:spinnerDropDownItemStyle">@style/dialogFormSpinnerDropDown</item>
+        <!-- No-selector-background bugfix -->
+        <item name="android:activatedBackgroundIndicator">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="Theme.MyTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#3F51B5</item>
+        <item name="colorPrimaryDark">#283593</item>
+        <item name="colorAccent">#303F9F</item>
+        <item name="toolbarStyle">@style/Theme.MyTheme.Toolbar</item>
+    </style>
+
+    <style name="Theme.MyTheme.Toolbar" parent="@style/Widget.AppCompat.Toolbar">
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="color">@android:color/white</item>
+        <item name="titleTextAppearance">@style/Theme.MyTheme.Toolbar.TextAppearance</item>
+        <item name="subtitleTextAppearance">@style/Theme.MyTheme.Toolbar.TextAppearance.Subtitle
+        </item>
+
+    </style>
+
+    <style name="Theme.MyTheme.Toolbar.TextAppearance" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="Theme.MyTheme.Toolbar.TextAppearance.Subtitle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="time_label">
+        <item name="android:textSize">@dimen/time_label_size</item>
+        <item name="android:textColor">@color/numbers_text_color</item>
+    </style>
+
+    <style name="ampm_label">
+        <item name="android:textSize">@dimen/ampm_label_size</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/ampm_text_color</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="day_of_week_label_condensed"/>
+
+    <style name="cardsListStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/windowBackground</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="cardBasicStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">4dp</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:layout_marginLeft">3dp</item>
+        <item name="android:layout_marginRight">3dp</item>
+    </style>
+
+    <style name="cardStyle" parent="cardBasicStyle">
+        <item name="android:background">@drawable/card_background</item>
+        <item name="android:layout_marginBottom">1dp</item>
+    </style>
+
+    <style name="cardHeaderStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:textSize">@dimen/regularTextSize</item>
+    </style>
+
+    <style name="cardRowStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+    </style>
+
+    <style name="cardLabelStyle">
+        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="aboutItemStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+    </style>
+
+    <style name="aboutClickableItemStyle" parent="aboutItemStyle">
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:paddingTop">12dp</item>
+    </style>
+
+    <style name="smallDataViewStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+    </style>
+
+    <style name="CalendarTheme">
+        <item name="calendarViewStyle">@style/CalendarStyle</item>
+    </style>
+
+    <style name="CalendarStyle">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+</resources>

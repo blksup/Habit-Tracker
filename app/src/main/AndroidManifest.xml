@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    package="com.blk.uhabits"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="1"
+    android:versionName="1.0.0">
+
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18"/>
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18"/>
+
+    <application
+        android:name="com.blk.uhabits.HabitsApplication"
+        android:allowBackup="true"
+        android:backupAgent="com.blk.uhabits.HabitsBackupAgent"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/main_activity_title"
+        android:theme="@style/AppBaseTheme"
+        android:supportsRtl="true">
+
+        <meta-data
+            android:name="com.google.android.backup.api_key"
+            android:value="AEdPqrEAAAAI6aeWncbnMNo8E5GWeZ44dlc5cQ7tCROwFhOtiw"/>
+
+        <activity
+            android:name="com.blk.uhabits.MainActivity"
+            android:label="@string/main_activity_title">
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.blk.uhabits.ShowHabitActivity"
+            android:label="@string/title_activity_show_habit"
+            android:theme="@style/Theme.MyTheme"
+            android:parentActivityName="com.blk.uhabits.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.blk.uhabits.MainActivity"/>
+        </activity>
+
+        <activity
+            android:name="com.blk.uhabits.SettingsActivity"
+            android:label="@string/settings"
+            android:theme="@style/Theme.MyTheme"
+            android:parentActivityName="com.blk.uhabits.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.blk.uhabits.MainActivity"/>
+        </activity>
+
+        <activity
+            android:name="com.blk.uhabits.IntroActivity"
+            android:label=""
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
+        <activity
+            android:name="com.blk.uhabits.widgets.HabitPickerDialog"
+            android:theme="@style/Theme.AppCompat.Light.Dialog">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name="com.blk.uhabits.widgets.CheckmarkWidgetProvider"
+            android:label="@string/checkmark">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_checkmark_info"/>
+        </receiver>
+
+        <receiver
+            android:name="com.blk.uhabits.widgets.HistoryWidgetProvider"
+            android:label="@string/history">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_history_info"/>
+        </receiver>
+
+        <receiver
+            android:name="com.blk.uhabits.widgets.ScoreWidgetProvider"
+            android:label="@string/habit_strength">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_score_info"/>
+        </receiver>
+
+        <receiver
+            android:name="com.blk.uhabits.widgets.StreakWidgetProvider"
+            android:label="@string/streaks">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_streak_info"/>
+        </receiver>
+
+        <receiver
+            android:name="com.blk.uhabits.widgets.FrequencyWidgetProvider"
+            android:label="@string/frequency">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_frequency_info"/>
+        </receiver>
+
+        <receiver android:name="com.blk.uhabits.HabitBroadcastReceiver"/>
+
+    </application>
+
+</manifest>

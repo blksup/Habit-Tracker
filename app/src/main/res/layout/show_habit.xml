@@ -1,0 +1,191 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://com.blk/android"
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/windowBackground"
+            android:fillViewport="true">
+    <LinearLayout
+        style="@style/cardsListStyle"
+        tools:context="com.blk.uhabits.ShowHabitActivity">
+        <LinearLayout
+            style="@style/cardStyle"
+            android:gravity="start">
+
+            <TextView
+                android:id="@+id/tvOverview"
+                style="@style/cardHeaderStyle"
+                android:text="@string/overview"/>
+
+            <LinearLayout
+                android:id="@+id/llOverview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <com.blk.uhabits.views.RingView
+                    android:id="@+id/scoreRing"
+                    style="@style/smallDataViewStyle"
+                    app:label="@string/habit_strength"
+                    app:maxDiameter="70"
+                    app:textSize="@dimen/smallTextSize"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center|bottom"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="ca-app-pub-1947924918537729/7456234691">
+        </com.google.android.gms.ads.AdView>
+
+        <LinearLayout
+            style="@style/cardStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|start"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvCount"
+                style="@style/cardHeaderStyle"
+                android:text="@string/number_of_repetitions"/>
+
+            <LinearLayout
+                android:id="@+id/llRepetition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <com.blk.uhabits.views.RepetitionCountView
+                    style="@style/smallDataViewStyle"
+                    app:interval="30"
+                    app:labelFormat="@string/last_x_days"
+                    app:labelValue="30"
+                    app:textSize="12"/>
+
+                <com.blk.uhabits.views.RepetitionCountView
+                    style="@style/smallDataViewStyle"
+                    app:interval="92"
+                    app:labelFormat="@string/last_x_months"
+                    app:labelValue="4"
+                    app:textSize="12"/>
+
+                <com.blk.uhabits.views.RepetitionCountView
+                    style="@style/smallDataViewStyle"
+                    app:interval="365"
+                    app:labelFormat="@string/last_x_months"
+                    app:labelValue="12"
+                    app:textSize="12"/>
+
+                <com.blk.uhabits.views.RepetitionCountView
+                    style="@style/smallDataViewStyle"
+                    app:interval="0"
+                    app:label="@string/all_time"
+                    app:textSize="12"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            style="@style/cardStyle"
+            android:gravity="center">
+
+            <Spinner
+                android:id="@+id/sStrengthInterval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/strengthIntervalNames"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:minWidth="100dp"
+                />
+
+            <TextView
+                android:id="@+id/tvStrength"
+                style="@style/cardHeaderStyle"
+                android:text="@string/habit_strength"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"/>
+
+            <com.blk.uhabits.views.HabitScoreView
+                android:id="@+id/scoreView"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_below="@id/tvStrength"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            style="@style/cardStyle"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingBottom="0dp">
+
+            <TextView
+                android:id="@+id/tvHistory"
+                style="@style/cardHeaderStyle"
+                android:text="@string/history"/>
+
+            <com.blk.uhabits.views.HabitHistoryView
+                android:id="@+id/historyView"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"/>
+
+            <Button
+                android:id="@+id/btEditHistory"
+                style="?android:borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_action_edit_light"
+                android:text="@string/edit"
+                android:textColor="@color/grey_400"
+                android:textSize="@dimen/smallTextSize"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/cardStyle"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvStreaks"
+                style="@style/cardHeaderStyle"
+                android:text="@string/streaks"/>
+
+            <com.blk.uhabits.views.HabitStreakView
+                android:id="@+id/streakView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/cardStyle"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvWeekdayFreq"
+                style="@style/cardHeaderStyle"
+                android:text="@string/frequency"/>
+
+            <com.blk.uhabits.views.HabitFrequencyView
+                android:id="@+id/punchcardView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

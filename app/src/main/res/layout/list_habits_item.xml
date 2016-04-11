@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <ViewStub
+            android:id="@+id/card_back_view_stub"
+            android:inflatedId="@+id/card_back_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/card_command" />
+    <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/card_view"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardElevation="6dp"
+            card_view:cardCornerRadius="2dp"
+            card_view:cardPreventCornerOverlap="false">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/llInner">
+
+                <TextView
+                        android:id="@+id/tvStar"
+                        style="@style/habitsListStarStyle"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/habitsListNameStyle"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/label"
+                            android:textStyle="bold"
+                            android:textSize="16sp"/>
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="italic"
+                            android:textSize="13sp"
+                            android:id="@+id/tvDescription"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/llButtons"
+                        style="@style/habitsListButtonsPanelStyle"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp">
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/ic_action_snooze"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:textSize="13sp"
+                        android:id="@+id/tvReminder"/>
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="13sp"
+                        android:id="@+id/tvFreq"/>
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="right"
+                        android:textSize="13sp"
+                        android:id="@+id/tvScore"/>
+            </LinearLayout>
+            <RelativeLayout android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                <TextView
+                        android:id="@+id/action_edit_habit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dip"
+                        android:fontFamily="sans-serif-light"
+                        android:textSize="14dp"
+                        android:textAllCaps="true"
+                        android:textStyle="bold"
+                        android:textColor="#9a428b"
+                        android:singleLine="true"
+                        android:gravity="right"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/nutri3"
+                        android:text="Edit"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"/>
+                <TextView
+                        android:id="@+id/action_archive_habit"
+                        android:layout_width="wrap_content"
+                        android:layout_toStartOf="@+id/action_edit_habit"
+                        android:fontFamily="sans-serif-light"
+                        android:layout_height="30dip"
+                        android:textSize="14dp"
+                        android:textAllCaps="true"
+                        android:textStyle="bold"
+                        android:textColor="#9a428b"
+                        android:singleLine="true"
+                        android:gravity="right"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="Archive"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+</FrameLayout>
