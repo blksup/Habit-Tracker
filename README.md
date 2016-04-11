@@ -1,7 +1,3 @@
-<a href="https://circleci.com/gh/iSoron/uhabits/tree/dev">
-  <img src="https://circleci.com/gh/iSoron/uhabits/tree/dev.svg?style=shield" align="right">
-</a>
-
 # Habit Tracker
 
 Habit tracker is simple android application which was customized from Loop Habit Tracker.
@@ -37,4 +33,4 @@ The easiest way to install Loop is through the [Google Play Store][playstore].
     You should have received a copy of the GNU General Public License along
     with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-[playstore]: https://play.google.com/store/apps/details?id=org.isoron.uhabits
+[playstore]: https://play.google.com/store/apps/details?id=com.blk.uhabits
